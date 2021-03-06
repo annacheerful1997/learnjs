@@ -1,76 +1,59 @@
-/* Задание на урок:
-1) Первую часть задания повторить по уроку
-2) Создать функцию showMyDB, которая будет проверять свойство privat. Если стоит в позиции
-false - выводит в консоль главный объект программы
-3) Создать функцию writeYourGenres в которой пользователь будет 3 раза отвечать на вопрос 
-"Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
-genres
-P.S. Функции вызывать не обязательно */
-
-let numberOfFilms;
-
-function start() {
-    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-
-    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-    }
+/*function first() {
+    setTimeout(function() {
+        console.log(1);
+    }, 500);
 }
 
-start();
-
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
-
-
-function rememberMyFilms() {
-    for (let i = 0; i < 2; i++) {
-        const a = prompt('Один из последних просмотренных фильмов?', ''),
-              b = prompt('На сколько оцените его?', '');
-    
-        if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-            personalMovieDB.movies[a] = b;
-            console.log('done');
-        } else {
-            console.log('error');
-            i--;
-        }
-    }
+function second() {
+    console.log(2);
 }
 
-rememberMyFilms();
+first(); 
+second();
 
-function detectPersonalLevel() {
-    if (personalMovieDB.count < 10) {
-        console.log("Просмотрено довольно мало фильмов");
-    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-        console.log("Вы классический зритель");
-    } else if (personalMovieDB.count >= 30) {
-        console.log("Вы киноман");
-    } else {
-        console.log("Произошла ошибка");
-    }
+function LearnJS(lang, callback) {
+    console.log(`Я учу: ${lang}`);
+    callback();
 }
 
-detectPersonalLevel();
+function done() {
+    console.log('Я прошел этот урок');
+}
+//s
+LearnJS('JavaScript', done);*/
 
-function showMyDB (hidden) {
-    if (!hidden) {
-        console.log(personalMovieDB);
-    }
+const arr = ['Denis', 'Olga', 'Ivan', 'Max'];
+
+/*Полчуить массив состоящий из элементов 
+где каждый элемент является длинной строки каждого элемента из массива
+[5, 4, 4, 3]*/
+
+let newArr = [];
+
+for(let i = 0; i < arr.length; i++) {
+    //пушим длинну каждого элемента массива arr в массив newArr
+    newArr.push(arr[i].length);
 }
 
-showMyDB(personalMovieDB.privat);
+console.log(newArr);
 
-function writeYourGenres() {
-    for (let i = 1; i <= 3; i++) {
-        personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
-    }
+let newArr2 = [];
+
+for(let i = 0; i < arr.length; i++) {
+    //пушим длинну каждого элемента массива arr в массив newArr
+    newArr2.push(arr[i].toUpperCase());
 }
 
-writeYourGenres();
+console.log(newArr2);
+
+function mapArray(arr, fn) {
+    const res = [];
+    for(let i = 0; i < arr.length; i++) {
+        //пушим длинну каждого элемента массива arr в массив newArr
+        res.push(fn(arr[i]));
+    }
+
+    return res;
+}
+
+
