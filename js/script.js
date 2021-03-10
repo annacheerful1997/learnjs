@@ -1,59 +1,70 @@
-/*function first() {
-    setTimeout(function() {
-        console.log(1);
-    }, 500);
-}
 
-function second() {
-    console.log(2);
-}
+ // 1. Обьекты это структуры которые могут сохранять в себе любые типы данных в формате ключ:значение
+ // 2. Обьекты могут быть вложенные друг в друга
+ // 3. Чтобы перебрать обьекты можно использовать конструкцию for in и внутри делать все что угодно как с ключами так и со значениями
+ // 4. У обьектов бывают встроенные методы и свойства
+ // 5. Для того чтобы обьект умел что то делать мы можем записывать в него функции
+/*const option = {
 
-first(); 
-second();
-
-function LearnJS(lang, callback) {
-    console.log(`Я учу: ${lang}`);
-    callback();
-}
-
-function done() {
-    console.log('Я прошел этот урок');
-}
-//s
-LearnJS('JavaScript', done);*/
-
-const arr = ['Denis', 'Olga', 'Ivan', 'Max'];
-
-/*Полчуить массив состоящий из элементов 
-где каждый элемент является длинной строки каждого элемента из массива
-[5, 4, 4, 3]*/
-
-let newArr = [];
-
-for(let i = 0; i < arr.length; i++) {
-    //пушим длинну каждого элемента массива arr в массив newArr
-    newArr.push(arr[i].length);
-}
-
-console.log(newArr);
-
-let newArr2 = [];
-
-for(let i = 0; i < arr.length; i++) {
-    //пушим длинну каждого элемента массива arr в массив newArr
-    newArr2.push(arr[i].toUpperCase());
-}
-
-console.log(newArr2);
-
-function mapArray(arr, fn) {
-    const res = [];
-    for(let i = 0; i < arr.length; i++) {
-        //пушим длинну каждого элемента массива arr в массив newArr
-        res.push(fn(arr[i]));
+    name : 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        bg: 'red'
+    },
+    makeTest: function() {
+        console.log('Test');
     }
+};
+option.makeTest();
 
-    return res;
+// Применяем деструктуризацию обьектов
+// Помещаем те переменные которые хотим вытащим
+// Указываем структуру откуда вытщить
+const {border, bg} = option.colors;
+console.log(bg);
+
+console.log(Object.keys(option).length); // количество элементов в массиве
+
+//console.log(option.colors.bg);
+
+//delete option.colors.bg;
+
+//console.log(option);
+
+/*let counter = 0;
+for (let key in option) {
+    if(typeof(option[key]) === 'object') {
+        for(let i in option[key]) {
+            console.log(`Свойство ${key} имеет значение ${option[key][i]}`);
+            
+        }
+    } else {
+        console.log(`Свойство ${key} имеет значение ${option[key]}`);
+        counter++;
+
+    }
 }
+console.log(counter); // выведет сколько всего элементов*/
 
+//const arr = [1,2,3,4];
 
+// Удалим последний элемент из массива
+//arr.pop();
+//console.log(arr);
+
+// Добавим элемент в кнец массива
+//arr.push(1);
+
+/*for(let value of arr) {
+    console.log(value);
+}*/
+
+/*arr.forEach(function(item, i, arr) {
+    console.log(`${i} : ${item} внутри массива ${arr}`);
+});*/
+
+const str = prompt("", "");
+const products = str.split(", ");
+console.log(products);
