@@ -48,7 +48,9 @@ for (let key in option) {
 }
 console.log(counter); // выведет сколько всего элементов*/
 
-//const arr = [1,2,3,4];
+const arr = [1,2,3,4,24,33,56]; // 1, 2,24,33, 4,56
+arr.sort();
+console.log(arr);
 
 // Удалим последний элемент из массива
 //arr.pop();
@@ -65,6 +67,6 @@ console.log(counter); // выведет сколько всего элемент
     console.log(`${i} : ${item} внутри массива ${arr}`);
 });*/
 
-const str = prompt("", "");
+/*const str = prompt("", "");
 const products = str.split(", ");
-console.log(products);
+console.log(products);*/
